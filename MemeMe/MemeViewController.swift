@@ -10,7 +10,7 @@ import UIKit
 
 class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIBarButtonItem!
@@ -20,7 +20,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    // MARK: Action methods
+    // MARK: - Action methods
     @IBAction func takeImageFromCamera(sender: UIBarButtonItem) {
         takePhoto(.Camera)
     }
@@ -42,10 +42,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     
-    // MARK: Variables/Constants
+    // MARK: - Variables/Constants
     private var strokeWidth : Float = -5
     
-    // MARK: Lifecycle methods
+    // MARK: - Lifecycle methods
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -65,7 +65,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         setTextFieldAttributes(bottomTextField)
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     private func takePhoto(sourceType : UIImagePickerControllerSourceType) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -117,6 +117,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             AppDelegate).memes.append(meme)
     }
     
+    // MARK: - Delegate methods
     
     // MARK: Image picker delegates methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -144,7 +145,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return true
     }
     
-    // MARK: Extensions
+    // MARK: - Extensions
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
