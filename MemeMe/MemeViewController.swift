@@ -41,9 +41,9 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         presentViewController(controller, animated: true, completion: nil)
     }
     
-    
     // MARK: - Variables/Constants
     private var strokeWidth : Float = -5
+    var currentMeme : MemeModel?
     
     // MARK: - Lifecycle methods
     override func viewWillAppear(animated: Bool) {
@@ -51,6 +51,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
         subscribeToKeyboardNotifications()
+        
+        if let meme = currentMeme {
+            imageView.image = meme.originalImage
+            topTextField.text = meme.topStr
+            bottomTextField.text = meme.bottomStr
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -110,11 +116,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func saveMeme() {
         
         //Create the meme
-        let meme = MemeModel(topStr: topTextField.text! , bottomStr: bottomTextField.text! , originalImage: imageView.image, memeImage: generateMemedImage())
+        let meme = MemeModel(top: topTextField.text! , bottom: bottomTextField.text! , original: imageView.image, meme: generateMemedImage())
         
         // Add it to the memes array in the Application Delegate
-        (UIApplication.sharedApplication().delegate as!
-            AppDelegate).memes.append(meme)
+        (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
+        
+        print("savememe")
     }
     
     // MARK: - Delegate methods
@@ -141,6 +148,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        print("text return")
+        if currentMeme != nil {
+            currentMeme!.topStr = topTextField.text!
+            currentMeme!.bottomStr = bottomTextField.text!
+            currentMeme!.memeImage = generateMemedImage()
+
+        }
+        
         
         return true
     }
@@ -174,15 +189,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
-
-    
-    
-    
-
-
-    
-    
-
     
 }
 
