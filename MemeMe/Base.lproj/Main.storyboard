@@ -7,11 +7,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="TPj-41-XMO">
             <objects>
                 <navigationController id="zpz-wO-HTG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="SPH-Z1-6bC"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="SPH-Z1-6bC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8M9-Gi-GgI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -166,11 +166,11 @@
             </objects>
             <point key="canvasLocation" x="841" y="1419"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="mvY-8S-shX">
             <objects>
                 <navigationController id="9OQ-wR-ijW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="b17-YA-a0W"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="b17-YA-a0W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ble-fd-2AI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -304,4 +304,8 @@
             <point key="canvasLocation" x="-886" y="257"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>

@@ -38,7 +38,7 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         let space : CGFloat = 3.0
-        let num : CGFloat = 3
+        let num : CGFloat = 2
         let dim = ((self.view.frame.size.width)-2*space) / num
         
         collectionFlow.minimumLineSpacing = 3.0
