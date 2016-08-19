@@ -22,8 +22,8 @@ class MemeTableViewController: UITableViewController {
         var controller: MemeViewController
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         
-        // putsh to navigation
-        self.navigationController!.pushViewController(controller, animated: true)
+        // present meme view controller
+        presentViewController(controller, animated: true, completion: nil)
     }
     
     // MARK: - Lifecycle methods

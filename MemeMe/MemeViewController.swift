@@ -16,7 +16,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var naviBar: UINavigationBar!
+    @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
@@ -39,6 +39,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         }
         presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelMeme(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Variables/Constants
@@ -95,7 +99,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        naviBar.hidden = true
+        topToolBar.hidden = true
         toolBar.hidden = true
         
         // Render view to an image
@@ -107,7 +111,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar
-        naviBar.hidden = false
+        topToolBar.hidden = false
         toolBar.hidden = false
         
         return memedImage
@@ -116,7 +120,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func saveMeme() {
         
         //Create the meme
-        let meme = MemeModel(top: topTextField.text! , bottom: bottomTextField.text! , original: imageView.image, meme: generateMemedImage())
+        let meme = MemeModel(topStr: topTextField.text! , bottomStr: bottomTextField.text! , originalImage: imageView.image, memeImage: generateMemedImage())
         
         // Add it to the memes array in the Application Delegate
         (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
@@ -148,14 +152,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print("text return")
-        if currentMeme != nil {
-            currentMeme!.topStr = topTextField.text!
-            currentMeme!.bottomStr = bottomTextField.text!
-            currentMeme!.memeImage = generateMemedImage()
-
-        }
-        
         
         return true
     }
@@ -176,7 +172,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     

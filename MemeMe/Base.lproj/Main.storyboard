@@ -36,21 +36,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGH-ux-7Tm">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="action" id="2sb-Lp-T3E">
+                                        <connections>
+                                            <action selector="shareMeme:" destination="BYZ-38-t0r" id="kyG-m9-TUg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Grt-15-TgG"/>
+                                    <barButtonItem systemItem="cancel" id="CV7-2s-0wZ">
+                                        <connections>
+                                            <action selector="cancelMeme:" destination="BYZ-38-t0r" id="3HD-gk-I4S"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gqj-kf-u8n">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="304-G1-ivI">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem id="0am-8Q-doz">
-                                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="action" id="05L-jB-AIP">
-                                            <connections>
-                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="Bc8-Mt-p1U"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td4-Fa-oy0">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -84,22 +88,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="304-G1-ivI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Pj-XB-GZ8"/>
+                            <constraint firstItem="NGH-ux-7Tm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2al-cH-TqG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="td4-Fa-oy0" secondAttribute="bottom" id="39R-Pl-EYx"/>
+                            <constraint firstItem="Gqj-kf-u8n" firstAttribute="top" secondItem="NGH-ux-7Tm" secondAttribute="bottom" id="8sD-ed-18V"/>
                             <constraint firstItem="Zyb-XP-Ocf" firstAttribute="leading" secondItem="td4-Fa-oy0" secondAttribute="leading" id="GR4-Ey-LEA"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="top" secondItem="Gqj-kf-u8n" secondAttribute="top" constant="5" id="GVJ-MQ-Keq"/>
                             <constraint firstAttribute="trailing" secondItem="Gqj-kf-u8n" secondAttribute="trailing" id="Ihr-IU-6ty"/>
                             <constraint firstItem="Gqj-kf-u8n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dQY-xe-0gm"/>
+                            <constraint firstItem="NGH-ux-7Tm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="esb-Gt-Uhx"/>
                             <constraint firstItem="td4-Fa-oy0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ffF-Gt-FZS"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="trailing" secondItem="Gqj-kf-u8n" secondAttribute="trailing" id="hG5-Dt-tlw"/>
-                            <constraint firstItem="Gqj-kf-u8n" firstAttribute="top" secondItem="304-G1-ivI" secondAttribute="bottom" id="k6d-vu-Dsy"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="leading" secondItem="Gqj-kf-u8n" secondAttribute="leading" id="kNX-2d-Evh"/>
                             <constraint firstItem="td4-Fa-oy0" firstAttribute="top" secondItem="Gqj-kf-u8n" secondAttribute="bottom" id="l50-6H-iSy"/>
                             <constraint firstAttribute="trailing" secondItem="td4-Fa-oy0" secondAttribute="trailing" id="ool-u9-UCG"/>
                             <constraint firstItem="Zyb-XP-Ocf" firstAttribute="trailing" secondItem="td4-Fa-oy0" secondAttribute="trailing" id="p5t-G3-NA7"/>
-                            <constraint firstItem="304-G1-ivI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sjh-dw-Lgs"/>
+                            <constraint firstAttribute="trailing" secondItem="NGH-ux-7Tm" secondAttribute="trailing" id="quX-tc-v9r"/>
                             <constraint firstItem="Gqj-kf-u8n" firstAttribute="bottom" secondItem="Zyb-XP-Ocf" secondAttribute="bottom" constant="5" id="ws5-19-t8i"/>
-                            <constraint firstAttribute="trailing" secondItem="304-G1-ivI" secondAttribute="trailing" id="xPY-TM-Z7B"/>
                         </constraints>
                     </view>
                     <connections>
@@ -107,10 +111,10 @@
                         <outlet property="bottomTextField" destination="Zyb-XP-Ocf" id="Edp-bD-AQU"/>
                         <outlet property="cameraButton" destination="ojG-gQ-Wlo" id="tHt-0m-DBM"/>
                         <outlet property="imageView" destination="Gqj-kf-u8n" id="4Ly-qK-NnX"/>
-                        <outlet property="naviBar" destination="304-G1-ivI" id="iSA-8t-NVO"/>
-                        <outlet property="shareButton" destination="05L-jB-AIP" id="SeD-14-GWi"/>
+                        <outlet property="shareButton" destination="2sb-Lp-T3E" id="8f3-Eg-x2w"/>
                         <outlet property="toolBar" destination="td4-Fa-oy0" id="2gA-wv-aEg"/>
                         <outlet property="topTextField" destination="NUw-OM-reK" id="GsN-oQ-Usr"/>
+                        <outlet property="topToolBar" destination="NGH-ux-7Tm" id="0mx-f9-E2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -245,20 +249,20 @@
         <scene sceneID="rhQ-jh-EYO">
             <objects>
                 <tableViewController id="h0P-y6-h69" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="6aL-X4-RGx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="6aL-X4-RGx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="rgX-zR-BDn" rowHeight="60" style="IBUITableViewCellStyleDefault" id="Tz2-bK-os6">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="rgX-zR-BDn" rowHeight="120" style="IBUITableViewCellStyleDefault" id="Tz2-bK-os6">
+                                <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tz2-bK-os6" id="hS2-Ab-Gra">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgX-zR-BDn">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="59.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

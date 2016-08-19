@@ -17,6 +17,7 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         if let meme = meme {
             imageView.image = meme.memeImage
+            
         }
     }
 
@@ -24,6 +25,6 @@ class MemeDetailViewController: UIViewController {
         let storyboard = self.storyboard!
         let editorController = storyboard.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         editorController.currentMeme = meme
-        self.navigationController!.pushViewController(editorController, animated: true)
+        presentViewController(editorController, animated: true, completion: nil)
     }
 }

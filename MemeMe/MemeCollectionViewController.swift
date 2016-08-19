@@ -26,7 +26,7 @@ class MemeCollectionViewController: UICollectionViewController {
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         
         // putsh to navigation
-        self.navigationController!.pushViewController(controller, animated: true)
+        presentViewController(controller, animated: true, completion: nil)
     }
     
     // MARK: - Lifecycle methods
