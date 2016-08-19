@@ -37,6 +37,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if completion {
                 self.saveMeme()
             }
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
         presentViewController(controller, animated: true, completion: nil)
     }
