@@ -47,7 +47,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     // MARK: - Variables/Constants
-    private var strokeWidth : Float = -5
+    private var strokeWidth : Float = -4
     var currentMeme : MemeModel?
     
     // MARK: - Lifecycle methods

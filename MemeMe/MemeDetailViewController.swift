@@ -19,9 +19,10 @@ class MemeDetailViewController: UIViewController {
             imageView.image = meme.memeImage
             
         }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: #selector(editMeme))
     }
-
-    @IBAction func editMeme(sender: AnyObject) {
+    
+    func editMeme() {
         let storyboard = self.storyboard!
         let editorController = storyboard.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
         editorController.currentMeme = meme

@@ -32,6 +32,7 @@ class MemeCollectionViewController: UICollectionViewController {
     // MARK: - Lifecycle methods
     override func viewWillAppear(animated: Bool) {
         self.collectionView?.reloadData()
+        self.tabBarController?.tabBar.hidden = true
     }
     
     override func viewDidLoad() {
@@ -65,6 +66,7 @@ class MemeCollectionViewController: UICollectionViewController {
         let storyboard = self.storyboard!
         let detailController = storyboard.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = memes[indexPath.row]
+        self.tabBarController?.tabBar.hidden = true
         self.navigationController!.pushViewController(detailController, animated: true)
     }
 }

@@ -29,6 +29,7 @@ class MemeTableViewController: UITableViewController {
     // MARK: - Lifecycle methods
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
+        self.tabBarController?.tabBar.hidden = false
     }
     
     
@@ -51,6 +52,25 @@ class MemeTableViewController: UITableViewController {
         let storyboard = self.storyboard!
         let detailController = storyboard.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = memes[indexPath.row]
+        self.tabBarController?.tabBar.hidden = true
         self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    //For deleting the Meme
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle:   UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch editingStyle {
+        case .Delete:
+            (UIApplication.sharedApplication().delegate as! AppDelegate).memes.removeAtIndex(indexPath.row)
+        case .None:
+            print("None")
+        case .Insert:
+            break
+        }
+        tableView.reloadData()
+        
     }
 }

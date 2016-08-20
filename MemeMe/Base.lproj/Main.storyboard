@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -91,17 +90,17 @@
                             <constraint firstItem="NGH-ux-7Tm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2al-cH-TqG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="td4-Fa-oy0" secondAttribute="bottom" id="39R-Pl-EYx"/>
                             <constraint firstItem="Gqj-kf-u8n" firstAttribute="top" secondItem="NGH-ux-7Tm" secondAttribute="bottom" id="8sD-ed-18V"/>
-                            <constraint firstItem="Zyb-XP-Ocf" firstAttribute="leading" secondItem="td4-Fa-oy0" secondAttribute="leading" id="GR4-Ey-LEA"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="top" secondItem="Gqj-kf-u8n" secondAttribute="top" constant="5" id="GVJ-MQ-Keq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gqj-kf-u8n" secondAttribute="bottom" constant="44" id="HGF-UA-zvH"/>
                             <constraint firstAttribute="trailing" secondItem="Gqj-kf-u8n" secondAttribute="trailing" id="Ihr-IU-6ty"/>
+                            <constraint firstItem="Zyb-XP-Ocf" firstAttribute="trailing" secondItem="Gqj-kf-u8n" secondAttribute="trailing" id="L1e-Eu-NDo"/>
+                            <constraint firstItem="Zyb-XP-Ocf" firstAttribute="leading" secondItem="Gqj-kf-u8n" secondAttribute="leading" id="WW5-8o-IUV"/>
                             <constraint firstItem="Gqj-kf-u8n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dQY-xe-0gm"/>
                             <constraint firstItem="NGH-ux-7Tm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="esb-Gt-Uhx"/>
                             <constraint firstItem="td4-Fa-oy0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ffF-Gt-FZS"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="trailing" secondItem="Gqj-kf-u8n" secondAttribute="trailing" id="hG5-Dt-tlw"/>
                             <constraint firstItem="NUw-OM-reK" firstAttribute="leading" secondItem="Gqj-kf-u8n" secondAttribute="leading" id="kNX-2d-Evh"/>
-                            <constraint firstItem="td4-Fa-oy0" firstAttribute="top" secondItem="Gqj-kf-u8n" secondAttribute="bottom" id="l50-6H-iSy"/>
                             <constraint firstAttribute="trailing" secondItem="td4-Fa-oy0" secondAttribute="trailing" id="ool-u9-UCG"/>
-                            <constraint firstItem="Zyb-XP-Ocf" firstAttribute="trailing" secondItem="td4-Fa-oy0" secondAttribute="trailing" id="p5t-G3-NA7"/>
                             <constraint firstAttribute="trailing" secondItem="NGH-ux-7Tm" secondAttribute="trailing" id="quX-tc-v9r"/>
                             <constraint firstItem="Gqj-kf-u8n" firstAttribute="bottom" secondItem="Zyb-XP-Ocf" secondAttribute="bottom" constant="5" id="ws5-19-t8i"/>
                         </constraints>
@@ -133,33 +132,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CPW-sX-lnB">
-                                <rect key="frame" x="0.0" y="60" width="600" height="480"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-mK-7B3">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AGR-6t-Gqa">
-                                        <rect key="frame" x="0.0" y="240" width="600" height="240"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRK-bx-RqL">
-                                                <rect key="frame" x="285" y="0.0" width="30" height="240"/>
-                                                <state key="normal" title="Edit"/>
-                                                <connections>
-                                                    <action selector="editMeme:" destination="5bw-tr-oMt" eventType="touchUpInside" id="7CU-Bx-vzR"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-mK-7B3">
+                                <rect key="frame" x="20" y="28" width="560" height="564"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CPW-sX-lnB" firstAttribute="height" secondItem="HR6-kM-J67" secondAttribute="height" multiplier="0.8" id="Aez-sS-1Ds"/>
-                            <constraint firstItem="CPW-sX-lnB" firstAttribute="centerY" secondItem="HR6-kM-J67" secondAttribute="centerY" id="IZK-p2-K2k"/>
-                            <constraint firstItem="CPW-sX-lnB" firstAttribute="centerX" secondItem="HR6-kM-J67" secondAttribute="centerX" id="qOV-xh-KwS"/>
-                            <constraint firstItem="CPW-sX-lnB" firstAttribute="width" secondItem="HR6-kM-J67" secondAttribute="width" id="yXQ-wI-yva"/>
+                            <constraint firstItem="TqE-mK-7B3" firstAttribute="top" secondItem="ynq-oh-UJM" secondAttribute="bottom" constant="8" symbolic="YES" id="5jD-VS-T4d"/>
+                            <constraint firstItem="TqE-mK-7B3" firstAttribute="leading" secondItem="HR6-kM-J67" secondAttribute="leadingMargin" id="HzP-y4-N9A"/>
+                            <constraint firstItem="FxR-JF-MoH" firstAttribute="top" secondItem="TqE-mK-7B3" secondAttribute="bottom" constant="8" symbolic="YES" id="bSf-3O-g5S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TqE-mK-7B3" secondAttribute="trailing" id="rMr-Bz-Ayt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -254,15 +236,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="rgX-zR-BDn" rowHeight="120" style="IBUITableViewCellStyleDefault" id="Tz2-bK-os6">
-                                <rect key="frame" x="0.0" y="92" width="600" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="rgX-zR-BDn" rowHeight="240" style="IBUITableViewCellStyleDefault" id="Tz2-bK-os6">
+                                <rect key="frame" x="0.0" y="92" width="600" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tz2-bK-os6" id="hS2-Ab-Gra">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="239.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgX-zR-BDn">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="119.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="239.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
